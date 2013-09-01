@@ -1767,4 +1767,7 @@
   <java-symbol type="bool" name="config_samsung_stk" />
   <java-symbol type="bool" name="config_smsSamsungCdmaAlternateMessageIDEncoding" />
 
+  <!-- Package Manager -->
+  <java-symbol type="array" name="config_disabledComponents" />
+
 </resources>
