@@ -45,19 +45,10 @@ import android.os.ParcelFileDescriptor;
  */
 interface IQBluetooth
 {
-    int getLEAdvMode();
-    boolean setLEAdvParams(int min_int, int max_int, String address, int ad_type);
-    boolean setLEAdvMode(int mode);
-    boolean setLEManuData(in byte[] manuData);
-    boolean setLEServiceData(in byte[] serviceData);
-    boolean setLEAdvMask(boolean bLocalName, boolean bServices, boolean bTxPower,boolean bManuData, boolean ServiceData);
-    boolean setLEScanRespMask(boolean bLocalName, boolean bServices, boolean bTxPower,boolean bManuData );
     int     startLeScanEx(in BluetoothLEServiceUuid[] services, in IQBluetoothAdapterCallback callback);
     void    stopLeScanEx(in int token);
     boolean registerLeLppRssiMonitorClient(in String address, in IQBluetoothAdapterCallback client, in boolean add);
     void writeLeLppRssiThreshold(in String address, in byte min, in byte max);
     void readLeLppRssiThreshold(in String address);
     void enableLeLppRssiMonitor(in String address, in boolean enable);
-    boolean sendLEConnUpdate(in BluetoothDevice device, in int interval_min, in int interval_max, in int latency,
-            in int supervisionTimeout);
 }
